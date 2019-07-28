@@ -1,4 +1,4 @@
 [submodule "nejcoin"]
 	path = nejcoin
-	url = https://github.com/honzapatCZ/NejCoin
+	url = http://github.com/honzapatCZ/nejcoin.git
 	ignore = all
