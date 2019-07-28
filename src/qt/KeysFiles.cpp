@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Nejcoin Project
 //
 // All rights reserved.
 //
@@ -98,15 +98,15 @@ void WalletKeysFilesModel::clear()
     endResetModel();
 }
 
-void WalletKeysFilesModel::refresh(const QString &moneroAccountsDir)
+void WalletKeysFilesModel::refresh(const QString &nejcoinAccountsDir)
 {
     this->clear();
-    this->findWallets(moneroAccountsDir);
+    this->findWallets(nejcoinAccountsDir);
 }
 
-void WalletKeysFilesModel::findWallets(const QString &moneroAccountsDir)
+void WalletKeysFilesModel::findWallets(const QString &nejcoinAccountsDir)
 {
-    QStringList walletDir = this->m_walletManager->findWallets(moneroAccountsDir);
+    QStringList walletDir = this->m_walletManager->findWallets(nejcoinAccountsDir);
     foreach(QString wallet, walletDir){
         if(!fileExists(wallet + ".keys"))
             continue;

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2015, The Monero Project
+// Copyright (c) 2014-2015, The Nejcoin Project
 //
 // All rights reserved.
 //
@@ -28,8 +28,8 @@
 
 import QtQuick 2.9
 
-import "../components" as MoneroComponents
-import "../components/effects/" as MoneroEffects
+import "../components" as NejcoinComponents
+import "../components/effects/" as NejcoinEffects
 
 Label {
     id: item
@@ -41,12 +41,12 @@ Label {
         anchors.left: parent.left
         anchors.right: parent.right
         height: 2
-        color: MoneroComponents.Style.appWindowBorderColor
+        color: NejcoinComponents.Style.appWindowBorderColor
 
-        MoneroEffects.ColorTransition {
+        NejcoinEffects.ColorTransition {
             targetObj: parent
-            blackColor: MoneroComponents.Style._b_appWindowBorderColor
-            whiteColor: MoneroComponents.Style._w_appWindowBorderColor
+            blackColor: NejcoinComponents.Style._b_appWindowBorderColor
+            whiteColor: NejcoinComponents.Style._w_appWindowBorderColor
         }
     }
 }

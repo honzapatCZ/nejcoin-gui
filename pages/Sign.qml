@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Nejcoin Project
 //
 // All rights reserved.
 //
@@ -32,9 +32,9 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.1
 import QtQuick.Dialogs 1.2
 
-import moneroComponents.Clipboard 1.0
-import moneroComponents.WalletManager 1.0
-import "../components" as MoneroComponents
+import nejcoinComponents.Clipboard 1.0
+import nejcoinComponents.WalletManager 1.0
+import "../components" as NejcoinComponents
 
 Rectangle {
     property alias signHeight: mainLayout.height
@@ -97,41 +97,41 @@ Rectangle {
 
         spacing: 20
 
-        MoneroComponents.Label {
+        NejcoinComponents.Label {
             fontSize: 24
             text: qsTr("Sign/verify") + translationManager.emptyString
         }
 
-        MoneroComponents.TextPlain {
+        NejcoinComponents.TextPlain {
             text: qsTr("This page lets you sign/verify a message (or file contents) with your address.") + translationManager.emptyString
             wrapMode: Text.Wrap
             Layout.fillWidth: true
-            font.family: MoneroComponents.Style.fontRegular.name
+            font.family: NejcoinComponents.Style.fontRegular.name
             font.pixelSize: 14
-            color: MoneroComponents.Style.defaultFontColor
+            color: NejcoinComponents.Style.defaultFontColor
         }
 
         ColumnLayout {
             id: modeRow
             Layout.fillWidth: true
 
-            MoneroComponents.TextPlain {
+            NejcoinComponents.TextPlain {
                 id: modeText
                 Layout.fillWidth: true
                 Layout.topMargin: 12
                 text: qsTr("Mode") + translationManager.emptyString
                 wrapMode: Text.Wrap
-                font.family: MoneroComponents.Style.fontRegular.name
+                font.family: NejcoinComponents.Style.fontRegular.name
                 font.pixelSize: 20
                 textFormat: Text.RichText
-                color: MoneroComponents.Style.defaultFontColor
+                color: NejcoinComponents.Style.defaultFontColor
             }
 
             ColumnLayout {
                 id: modeButtonsColumn
                 Layout.topMargin: 10
 
-                MoneroComponents.RadioButton {
+                NejcoinComponents.RadioButton {
                     id: handleMessageButton
                     text: qsTr("Message") + translationManager.emptyString
                     fontSize: 16
@@ -144,7 +144,7 @@ Rectangle {
                     }
                 }
 
-                MoneroComponents.RadioButton {
+                NejcoinComponents.RadioButton {
                     id: handleFileButton
                     text: qsTr("File") + translationManager.emptyString
                     fontSize: 16
@@ -163,7 +163,7 @@ Rectangle {
             id: signSection
             spacing: 10
 
-            MoneroComponents.LabelSubheader {
+            NejcoinComponents.LabelSubheader {
                 Layout.fillWidth: true
                 Layout.topMargin: 12
                 Layout.bottomMargin: 24
@@ -177,7 +177,7 @@ Rectangle {
                 spacing: 10
                 visible: messageMode
 
-                MoneroComponents.LineEditMulti{
+                NejcoinComponents.LineEditMulti{
                     id: signMessageLine
                     Layout.fillWidth: true
                     labelFontSize: 14
@@ -196,7 +196,7 @@ Rectangle {
                 Layout.fillWidth: true
                 visible: fileMode
 
-                MoneroComponents.LineEditMulti {
+                NejcoinComponents.LineEditMulti {
                     id: signFileLine
                     labelFontSize: 14
                     labelText: qsTr("File") + translationManager.emptyString
@@ -209,7 +209,7 @@ Rectangle {
                     text: ''
                 }
 
-                MoneroComponents.StandardButton {
+                NejcoinComponents.StandardButton {
                     id: loadFileToSignButton
                     Layout.alignment: Qt.AlignBottom
                     small: false
@@ -224,7 +224,7 @@ Rectangle {
             ColumnLayout {
                 id: signSignatureRow
 
-                MoneroComponents.LineEditMulti {
+                NejcoinComponents.LineEditMulti {
                     id: signSignatureLine
                     labelFontSize: 14
                     labelText: qsTr("Signature") + translationManager.emptyString
@@ -241,7 +241,7 @@ Rectangle {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignRight
 
-                MoneroComponents.StandardButton {
+                NejcoinComponents.StandardButton {
                     id: clearSignButton
                     text: qsTr("Clear") + translationManager.emptyString
                     enabled: signMessageLine.text !== '' || signFileLine.text !== ''
@@ -253,7 +253,7 @@ Rectangle {
                     }
                 }
 
-                MoneroComponents.StandardButton {
+                NejcoinComponents.StandardButton {
                     id: signMessageButton
                     visible: messageMode
                     text: qsTr("Sign Message") + translationManager.emptyString
@@ -265,7 +265,7 @@ Rectangle {
                     }
                 }
 
-                MoneroComponents.StandardButton {
+                NejcoinComponents.StandardButton {
                     id: signFileButton
                     visible: fileMode
                     small: true
@@ -284,14 +284,14 @@ Rectangle {
             id: verifySection
             spacing: 16
 
-            MoneroComponents.LabelSubheader {
+            NejcoinComponents.LabelSubheader {
                 Layout.fillWidth: true
                 Layout.bottomMargin: 24
                 textFormat: Text.RichText
                 text: fileMode ? qsTr("Verify file") + translationManager.emptyString : qsTr("Verify message") + translationManager.emptyString
             }
 
-            MoneroComponents.LineEditMulti {
+            NejcoinComponents.LineEditMulti {
                 id: verifyMessageLine
                 visible: messageMode
                 Layout.fillWidth: true
@@ -310,7 +310,7 @@ Rectangle {
                 Layout.fillWidth: true
                 visible: fileMode
 
-                MoneroComponents.LineEditMulti {
+                NejcoinComponents.LineEditMulti {
                     id: verifyFileLine
                     labelFontSize: 14
                     labelText: qsTr("File") + translationManager.emptyString
@@ -322,7 +322,7 @@ Rectangle {
                     text: ''
                 }
 
-                MoneroComponents.StandardButton {
+                NejcoinComponents.StandardButton {
                     id: loadFileToVerifyButton
                     Layout.alignment: Qt.AlignBottom
                     small: false
@@ -334,20 +334,20 @@ Rectangle {
                 }
             }
 
-            MoneroComponents.LineEditMulti {
+            NejcoinComponents.LineEditMulti {
                 id: verifyAddressLine
                 Layout.fillWidth: true
                 labelFontSize: 14
                 labelText: qsTr("Address") + translationManager.emptyString
                 addressValidation: true
                 placeholderFontSize: 16
-                placeholderText: qsTr("Enter the Monero Address (example: 44AFFq5kSiGBoZ...)") + translationManager.emptyString
+                placeholderText: qsTr("Enter the Nejcoin Address (example: 44AFFq5kSiGBoZ...)") + translationManager.emptyString
                 wrapMode: Text.WrapAnywhere
                 text: ''
                 pasteButton: true
             }
 
-            MoneroComponents.LineEditMulti {
+            NejcoinComponents.LineEditMulti {
                 id: verifySignatureLine
                 labelFontSize: 14
                 labelText: qsTr("Signature") + translationManager.emptyString
@@ -364,7 +364,7 @@ Rectangle {
                 Layout.topMargin: 12
                 Layout.alignment: Qt.AlignRight
 
-                MoneroComponents.StandardButton {
+                NejcoinComponents.StandardButton {
                     id: clearVerifyButton
                     text: qsTr("Clear") + translationManager.emptyString
                     enabled: verifyMessageLine.text !== '' || verifyFileLine.text !== '' || verifyAddressLine.text !== '' || verifySignatureLine.text  !== ''
@@ -377,7 +377,7 @@ Rectangle {
                     }
                 }
 
-                MoneroComponents.StandardButton {
+                NejcoinComponents.StandardButton {
                     id: verifyFileButton
                     visible: fileMode
                     small: true
@@ -389,7 +389,7 @@ Rectangle {
                     }
                 }
 
-                MoneroComponents.StandardButton {
+                NejcoinComponents.StandardButton {
                     id: verifyMessageButton
                     visible: messageMode
                     small: true

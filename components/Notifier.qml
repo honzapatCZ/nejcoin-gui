@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018, The Monero Project
+// Copyright (c) 2017-2018, The Nejcoin Project
 // 
 // All rights reserved.
 // 
@@ -28,8 +28,8 @@
 
 import QtQuick 2.9
 import QtQuick.Controls 1.4
-import moneroComponents.Wallet 1.0
-import "." as MoneroComponents
+import nejcoinComponents.Wallet 1.0
+import "." as NejcoinComponents
 
 Item {
     id: item
@@ -52,7 +52,7 @@ Item {
             backgroundVisible: false
             textFormat: TextEdit.AutoText
             anchors.fill: parent
-            font.family: MoneroComponents.Style.fontRegular.name
+            font.family: NejcoinComponents.Style.fontRegular.name
             font.pixelSize: 12
             textMargin: 20
             textColor: "white"

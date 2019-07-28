@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The Nejcoin Project
 // 
 // All rights reserved.
 // 
@@ -29,8 +29,8 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.1
 
-import moneroComponents.Wallet 1.0
-import "../components" as MoneroComponents
+import nejcoinComponents.Wallet 1.0
+import "../components" as NejcoinComponents
 
 Rectangle {
     id: item
@@ -79,7 +79,7 @@ Rectangle {
                 anchors.rightMargin: !appWindow.isMining ? 11 : 0
                 source: {
                     if(appWindow.isMining) {
-                       return "qrc:///images/miningxmr.png"
+                       return "qrc:///images/miningnejc.png"
                     } else if(item.connected == Wallet.ConnectionStatus_Connected) {
                         return "qrc:///images/lightning.png"
                     } else {
@@ -106,30 +106,30 @@ Rectangle {
             height: 40
             width: 260
 
-            MoneroComponents.TextPlain {
+            NejcoinComponents.TextPlain {
                 id: statusText
                 anchors.left: parent.left
                 anchors.top: parent.top
                 anchors.topMargin: 0
-                font.family: MoneroComponents.Style.fontMedium.name
+                font.family: NejcoinComponents.Style.fontMedium.name
                 font.bold: true
                 font.pixelSize: 13
-                color: MoneroComponents.Style.dimmedFontColor
-                opacity: MoneroComponents.Style.blackTheme ? 0.65 : 0.5
+                color: NejcoinComponents.Style.dimmedFontColor
+                opacity: NejcoinComponents.Style.blackTheme ? 0.65 : 0.5
                 text: qsTr("Network status") + translationManager.emptyString
                 themeTransition: false
             }
 
-            MoneroComponents.TextPlain {
+            NejcoinComponents.TextPlain {
                 id: statusTextVal
                 anchors.left: parent.left
                 anchors.top: parent.top
                 anchors.topMargin: 14
-                font.family: MoneroComponents.Style.fontMedium.name
+                font.family: NejcoinComponents.Style.fontMedium.name
                 font.pixelSize: 20
-                color: MoneroComponents.Style.defaultFontColor
+                color: NejcoinComponents.Style.defaultFontColor
                 text: getConnectionStatusString(item.connected) + translationManager.emptyString
-                opacity: MoneroComponents.Style.blackTheme ? 1.0 : 0.7
+                opacity: NejcoinComponents.Style.blackTheme ? 1.0 : 0.7
                 themeTransition: false
 
                 MouseArea {

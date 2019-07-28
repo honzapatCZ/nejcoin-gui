@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The Nejcoin Project
 // 
 // All rights reserved.
 // 
@@ -29,8 +29,8 @@
 import QtQuick 2.9
 import QtGraphicalEffects 1.0
 
-import "../components" as MoneroComponents
-import "effects/" as MoneroEffects
+import "../components" as NejcoinComponents
+import "effects/" as NejcoinEffects
 
 Rectangle {
     id: button
@@ -73,8 +73,8 @@ Rectangle {
         start: Qt.point(width, 0)
         end: Qt.point(0, 0)
         gradient: Gradient {
-            GradientStop { position: 0.0; color: MoneroComponents.Style.menuButtonGradientStart }
-            GradientStop { position: 1.0; color: MoneroComponents.Style.menuButtonGradientStop }
+            GradientStop { position: 0.0; color: NejcoinComponents.Style.menuButtonGradientStart }
+            GradientStop { position: 1.0; color: NejcoinComponents.Style.menuButtonGradientStop }
         }
     }
 
@@ -82,7 +82,7 @@ Rectangle {
     Rectangle {
         visible: !isOpenGL && button.checked
         anchors.fill: parent
-        color: MoneroComponents.Style.menuButtonFallbackBackgroundColor
+        color: NejcoinComponents.Style.menuButtonFallbackBackgroundColor
     }
 
     // button decorations that are subject to leftMargin offsets
@@ -105,17 +105,17 @@ Rectangle {
             Image {
                 anchors.centerIn: parent
                 anchors.left: parent.left
-                source: MoneroComponents.Style.menuButtonImageDotArrowSource
+                source: NejcoinComponents.Style.menuButtonImageDotArrowSource
                 visible: button.checked
             }
         }
 
         // button text
-        MoneroComponents.TextPlain {
+        NejcoinComponents.TextPlain {
             id: label
-            color: MoneroComponents.Style.menuButtonTextColor
-            themeTransitionBlackColor: MoneroComponents.Style._b_menuButtonTextColor
-            themeTransitionWhiteColor: MoneroComponents.Style._w_menuButtonTextColor
+            color: NejcoinComponents.Style.menuButtonTextColor
+            themeTransitionBlackColor: NejcoinComponents.Style._b_menuButtonTextColor
+            themeTransitionWhiteColor: NejcoinComponents.Style._w_menuButtonTextColor
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.right
             anchors.leftMargin: 8
@@ -125,26 +125,26 @@ Rectangle {
     }
 
     // menu button right arrow
-    MoneroEffects.ImageMask {
+    NejcoinEffects.ImageMask {
         anchors.verticalCenter: parent.verticalCenter
         anchors.leftMargin: parent.getOffset()
         anchors.right: parent.right
         anchors.rightMargin: 20
         height: 14
         width: 8
-        image: MoneroComponents.Style.menuButtonImageRightSource
-        color: button.checked ? MoneroComponents.Style.menuButtonImageRightColorActive : MoneroComponents.Style.menuButtonImageRightColor
+        image: NejcoinComponents.Style.menuButtonImageRightSource
+        color: button.checked ? NejcoinComponents.Style.menuButtonImageRightColorActive : NejcoinComponents.Style.menuButtonImageRightColor
         opacity: button.checked ? 0.8 : 0.25
     }
 
-    MoneroComponents.TextPlain {
+    NejcoinComponents.TextPlain {
         id: symbolText
         anchors.right: parent.right
         anchors.rightMargin: 44
         anchors.verticalCenter: parent.verticalCenter
         font.pixelSize: 12
         font.bold: true
-        color: button.checked || buttonArea.containsMouse ? MoneroComponents.Style.menuButtonTextColor : dot.color
+        color: button.checked || buttonArea.containsMouse ? NejcoinComponents.Style.menuButtonTextColor : dot.color
         visible: appWindow.ctrlPressed
         themeTransition: false
     }

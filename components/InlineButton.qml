@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Nejcoin Project
 //
 // All rights reserved.
 //
@@ -30,8 +30,8 @@ import QtQuick 2.9
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
 
-import "." as MoneroComponents
-import "./effects/" as MoneroEffects
+import "." as NejcoinComponents
+import "./effects/" as NejcoinEffects
 
 Item {
     id: inlineButton
@@ -45,7 +45,7 @@ Item {
     property string pressedColor: "#FF4304"
     property string releasedColor: "#FF6C3C"
     property string icon: ""
-    property string textColor: MoneroComponents.Style.inlineButtonTextColor
+    property string textColor: NejcoinComponents.Style.inlineButtonTextColor
     property int fontSize: small ? 14 : 16
     property int rectHeight: small ? 24 : 24
     property int rectHMargin: small ? 16 : 22
@@ -63,7 +63,7 @@ Item {
 
     Rectangle{
         id: rect
-        color: MoneroComponents.Style.buttonInlineBackgroundColor
+        color: NejcoinComponents.Style.buttonInlineBackgroundColor
         height: 24
         width: inlineText.text ? (inlineText.width + 16) : inlineButton.icon ? (inlineImage.width + 16) : rect.height
         radius: 4
@@ -72,9 +72,9 @@ Item {
         anchors.right: parent.right
         anchors.rightMargin: 4
 
-        MoneroComponents.TextPlain {
+        NejcoinComponents.TextPlain {
             id: inlineText
-            font.family: MoneroComponents.Style.fontBold.name
+            font.family: NejcoinComponents.Style.fontBold.name
             font.bold: true
             font.pixelSize: inlineButton.fontSize
             color: inlineButton.textColor
@@ -82,10 +82,10 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             themeTransition: false
 
-            MoneroEffects.ColorTransition {
+            NejcoinEffects.ColorTransition {
                 targetObj: inlineText
-                blackColor: MoneroComponents.Style._b_inlineButtonTextColor
-                whiteColor: MoneroComponents.Style._w_inlineButtonTextColor
+                blackColor: NejcoinComponents.Style._b_inlineButtonTextColor
+                whiteColor: NejcoinComponents.Style._w_inlineButtonTextColor
             }
         }
 
@@ -114,7 +114,7 @@ Item {
     }
 
     DropShadow {
-        visible: !MoneroComponents.Style.blackTheme
+        visible: !NejcoinComponents.Style.blackTheme
         anchors.fill: rect
         horizontalOffset: 2
         verticalOffset: 2

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2018, The Monero Project
+// Copyright (c) 2014-2018, The Nejcoin Project
 //
 // All rights reserved.
 //
@@ -33,8 +33,8 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Window 2.2
 
-import "." as MoneroComponents
-import "effects/" as MoneroEffects
+import "." as NejcoinComponents
+import "effects/" as NejcoinEffects
 import "../js/Windows.js" as Windows
 import "../js/Utils.js" as Utils
 
@@ -66,15 +66,15 @@ Window {
     height: 280
 
     // background
-    MoneroEffects.GradientBackground {
+    NejcoinEffects.GradientBackground {
         anchors.fill: parent
-        fallBackColor: MoneroComponents.Style.middlePanelBackgroundColor
-        initialStartColor: MoneroComponents.Style.middlePanelBackgroundGradientStart
-        initialStopColor: MoneroComponents.Style.middlePanelBackgroundGradientStop
-        blackColorStart: MoneroComponents.Style._b_middlePanelBackgroundGradientStart
-        blackColorStop: MoneroComponents.Style._b_middlePanelBackgroundGradientStop
-        whiteColorStart: MoneroComponents.Style._w_middlePanelBackgroundGradientStart
-        whiteColorStop: MoneroComponents.Style._w_middlePanelBackgroundGradientStop
+        fallBackColor: NejcoinComponents.Style.middlePanelBackgroundColor
+        initialStartColor: NejcoinComponents.Style.middlePanelBackgroundGradientStart
+        initialStopColor: NejcoinComponents.Style.middlePanelBackgroundGradientStop
+        blackColorStart: NejcoinComponents.Style._b_middlePanelBackgroundGradientStart
+        blackColorStop: NejcoinComponents.Style._b_middlePanelBackgroundGradientStop
+        whiteColorStart: NejcoinComponents.Style._w_middlePanelBackgroundGradientStart
+        whiteColorStop: NejcoinComponents.Style._w_middlePanelBackgroundGradientStop
         start: Qt.point(0, 0)
         end: Qt.point(height, width)
     }
@@ -103,7 +103,7 @@ Window {
             Rectangle {
                 anchors.fill: parent
                 color: "transparent"
-                border.color: MoneroComponents.Style.inputBorderColorActive
+                border.color: NejcoinComponents.Style.inputBorderColorActive
                 border.width: 1
                 radius: 4
             }
@@ -117,23 +117,23 @@ Window {
                     textFormat: TextEdit.RichText
                     selectByMouse: true
                     selectByKeyboard: true
-                    font.family: MoneroComponents.Style.defaultFontColor
+                    font.family: NejcoinComponents.Style.defaultFontColor
                     font.pixelSize: 14
-                    color: MoneroComponents.Style.defaultFontColor
-                    selectionColor: MoneroComponents.Style.textSelectionColor
+                    color: NejcoinComponents.Style.defaultFontColor
+                    selectionColor: NejcoinComponents.Style.textSelectionColor
                     wrapMode: TextEdit.Wrap
                     readOnly: true
                     function logCommand(msg){
-                        msg = log_color(msg, MoneroComponents.Style.blackTheme ? "lime" : "#009100");
+                        msg = log_color(msg, NejcoinComponents.Style.blackTheme ? "lime" : "#009100");
                         textArea.append(msg);
                     }
                     function logMessage(msg){
                         msg = msg.trim();
-                        var color = MoneroComponents.Style.defaultFontColor;
+                        var color = NejcoinComponents.Style.defaultFontColor;
                         if(msg.toLowerCase().indexOf('error') >= 0){
-                            color = MoneroComponents.Style.errorColor;
+                            color = NejcoinComponents.Style.errorColor;
                         } else if (msg.toLowerCase().indexOf('warning') >= 0){
-                            color = MoneroComponents.Style.warningColor;
+                            color = NejcoinComponents.Style.warningColor;
                         }
 
                         // format multi-lines
@@ -171,7 +171,7 @@ Window {
         RowLayout {
             Layout.fillWidth: true
 
-            MoneroComponents.LineEdit {
+            NejcoinComponents.LineEdit {
                 id: sendCommandText
                 Layout.fillWidth: true
                 placeholderText: qsTr("command + enter (e.g help)") + translationManager.emptyString

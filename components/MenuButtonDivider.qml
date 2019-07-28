@@ -1,15 +1,15 @@
 import QtQuick 2.9
 
-import "." as MoneroComponents
-import "effects/" as MoneroEffects
+import "." as NejcoinComponents
+import "effects/" as NejcoinEffects
 
 Rectangle {
-    color: MoneroComponents.Style.appWindowBorderColor
+    color: NejcoinComponents.Style.appWindowBorderColor
     height: 1
 
-    MoneroEffects.ColorTransition {
+    NejcoinEffects.ColorTransition {
         targetObj: parent
-        blackColor: MoneroComponents.Style._b_appWindowBorderColor
-        whiteColor: MoneroComponents.Style._w_appWindowBorderColor
+        blackColor: NejcoinComponents.Style._b_appWindowBorderColor
+        whiteColor: NejcoinComponents.Style._w_appWindowBorderColor
     }
 }

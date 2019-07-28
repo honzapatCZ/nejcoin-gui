@@ -4,7 +4,7 @@
 ** Contact: https://www.qt.io/licensing/
 **
 ****************************************************************************/
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Nejcoin Project
 //
 // All rights reserved.
 //
@@ -40,11 +40,11 @@
 #include <QHash>
 #include <QMetaProperty>
 
-#include "src/qt/MoneroSettings.h"
+#include "src/qt/NejcoinSettings.h"
 
 /*!
-    \qmlmodule moneroSettings 1.0
-    \title Monero Settings QML Component
+    \qmlmodule nejcoinSettings 1.0
+    \title Nejcoin Settings QML Component
     \ingroup qmlmodules
     \brief Provides persistent platform-independent application settings.
 
@@ -57,12 +57,12 @@
 
     To use this module, import the module with the following line:
     \code
-    import moneroComponents.Settings 1.0
+    import nejcoinComponents.Settings 1.0
     \endcode
 
     Usage:
     \code
-    MoneroSettings { id: persistentSettings, property bool foo: true }
+    NejcoinSettings { id: persistentSettings, property bool foo: true }
     \endcode
 
     @TODO: Remove this QML component after migrating to Qt >= 5.12.0, as
@@ -70,7 +70,7 @@
 */
 
 
-void MoneroSettings::load()
+void NejcoinSettings::load()
 {
     const QMetaObject *mo = this->metaObject();
     const int offset = mo->propertyOffset();
@@ -103,7 +103,7 @@ void MoneroSettings::load()
     }
 }
 
-void MoneroSettings::_q_propertyChanged()
+void NejcoinSettings::_q_propertyChanged()
 {
     // Called on QML property change
     const QMetaObject *mo = this->metaObject();
@@ -123,7 +123,7 @@ void MoneroSettings::_q_propertyChanged()
     this->m_timerId = this->startTimer(settingsWriteDelay);
 }
 
-QVariant MoneroSettings::readProperty(const QMetaProperty &property) const
+QVariant NejcoinSettings::readProperty(const QMetaProperty &property) const
 {
     QVariant var = property.read(this);
     if (var.userType() == qMetaTypeId<QJSValue>())
@@ -131,7 +131,7 @@ QVariant MoneroSettings::readProperty(const QMetaProperty &property) const
     return var;
 }
 
-void MoneroSettings::init()
+void NejcoinSettings::init()
 {
     if (!this->m_initialized) {
         this->m_settings = this->m_fileName.isEmpty() ? new QSettings() : new QSettings(this->m_fileName, QSettings::IniFormat);
@@ -143,7 +143,7 @@ void MoneroSettings::init()
     }
 }
 
-void MoneroSettings::reset()
+void NejcoinSettings::reset()
 {
     if (this->m_initialized && this->m_settings && !this->m_changedProperties.isEmpty())
         this->store();
@@ -151,7 +151,7 @@ void MoneroSettings::reset()
         delete this->m_settings;
 }
 
-void MoneroSettings::store()
+void NejcoinSettings::store()
 {
     QHash<const char *, QVariant>::const_iterator it = this->m_changedProperties.constBegin();
 
@@ -168,7 +168,7 @@ void MoneroSettings::store()
     this->m_changedProperties.clear();
 }
 
-void MoneroSettings::setFileName(const QString &fileName)
+void NejcoinSettings::setFileName(const QString &fileName)
 {
     if (fileName != this->m_fileName) {
         this->reset();
@@ -178,12 +178,12 @@ void MoneroSettings::setFileName(const QString &fileName)
     }
 }
 
-QString MoneroSettings::fileName() const
+QString NejcoinSettings::fileName() const
 {
     return this->m_fileName;
 }
 
-void MoneroSettings::timerEvent(QTimerEvent *event)
+void NejcoinSettings::timerEvent(QTimerEvent *event)
 {
     if (event->timerId() == this->m_timerId) {
         killTimer(this->m_timerId);
@@ -193,16 +193,16 @@ void MoneroSettings::timerEvent(QTimerEvent *event)
     QObject::timerEvent(event);
 }
 
-void MoneroSettings::componentComplete()
+void NejcoinSettings::componentComplete()
 {
     this->init();
 }
 
-void MoneroSettings::classBegin()
+void NejcoinSettings::classBegin()
 {
 }
 
-MoneroSettings::MoneroSettings(QObject *parent) :
+NejcoinSettings::NejcoinSettings(QObject *parent) :
     QObject(parent)
 {
 }

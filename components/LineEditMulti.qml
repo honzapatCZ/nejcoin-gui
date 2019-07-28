@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Nejcoin Project
 //
 // All rights reserved.
 //
@@ -29,7 +29,7 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.1
 
-import "../components" as MoneroComponents
+import "../components" as NejcoinComponents
 
 ColumnLayout {
     id: item
@@ -48,31 +48,31 @@ ColumnLayout {
     property int inputRadius: 4
 
     property bool placeholderCenter: false
-    property string placeholderFontFamily: MoneroComponents.Style.fontRegular.name
+    property string placeholderFontFamily: NejcoinComponents.Style.fontRegular.name
     property bool placeholderFontBold: false
     property int placeholderFontSize: 18
-    property string placeholderColor: MoneroComponents.Style.defaultFontColor
+    property string placeholderColor: NejcoinComponents.Style.defaultFontColor
     property real placeholderOpacity: 0.35
 
     property bool borderDisabled: false
     property string borderColor: {
         if(input.error && input.text !== ""){
-            return MoneroComponents.Style.inputBorderColorInvalid;
+            return NejcoinComponents.Style.inputBorderColorInvalid;
         } else if(input.activeFocus){
-            return MoneroComponents.Style.inputBorderColorActive;
+            return NejcoinComponents.Style.inputBorderColorActive;
         } else {
-            return MoneroComponents.Style.inputBorderColorInActive;
+            return NejcoinComponents.Style.inputBorderColorInActive;
         }
     }
 
     property bool error: false
 
-    property string labelFontColor: MoneroComponents.Style.defaultFontColor
+    property string labelFontColor: NejcoinComponents.Style.defaultFontColor
     property bool labelFontBold: false
     property int labelFontSize: 16
     property bool labelButtonVisible: false
 
-    property string fontColor: MoneroComponents.Style.defaultFontColor
+    property string fontColor: NejcoinComponents.Style.defaultFontColor
     property bool fontBold: false
     property int fontSize: 16
 
@@ -103,11 +103,11 @@ ColumnLayout {
         height: (inputLabel.height + 10)
         visible: showingHeader ? true : false
 
-        MoneroComponents.TextPlain {
+        NejcoinComponents.TextPlain {
             id: inputLabel
             anchors.top: parent.top
             anchors.left: parent.left
-            font.family: MoneroComponents.Style.fontRegular.name
+            font.family: NejcoinComponents.Style.fontRegular.name
             font.pixelSize: item.labelFontSize
             font.bold: labelFontBold
             textFormat: Text.RichText
@@ -125,13 +125,13 @@ ColumnLayout {
             anchors.right: parent.right
             spacing: 16
 
-            MoneroComponents.LabelButton {
+            NejcoinComponents.LabelButton {
                 id: labelButton
                 onClicked: labelButtonClicked()
                 visible: labelButtonVisible
             }
 
-            MoneroComponents.LabelButton {
+            NejcoinComponents.LabelButton {
                 id: copyButtonId
                 visible: copyButton && input.text !== ""
                 text: qsTr("Copy") + translationManager.emptyString
@@ -144,7 +144,7 @@ ColumnLayout {
                 }
             }
 
-            MoneroComponents.LabelButton {
+            NejcoinComponents.LabelButton {
                 id: pasteButtonId
                 onClicked: item.onPaste(clipboard.text())
                 text: qsTr("Paste") + translationManager.emptyString
@@ -153,7 +153,7 @@ ColumnLayout {
         }
     }
 
-    MoneroComponents.InputMulti {
+    NejcoinComponents.InputMulti {
         id: input
         readOnly: false
         addressValidation: false
@@ -172,7 +172,7 @@ ColumnLayout {
         onEditingFinished: item.editingFinished()
         error: item.error
 
-        MoneroComponents.TextPlain {
+        NejcoinComponents.TextPlain {
             id: placeholderLabel
             visible: input.text ? false : true
             anchors.verticalCenter: parent.verticalCenter
@@ -196,7 +196,7 @@ ColumnLayout {
             visible: !item.borderDisabled
         }
 
-        MoneroComponents.InlineButton {
+        NejcoinComponents.InlineButton {
             id: inlineButtonId
             visible: (inlineButtonId.text || inlineButtonId.icon) && inlineButtonVisible ? true : false
             anchors.right: parent.right

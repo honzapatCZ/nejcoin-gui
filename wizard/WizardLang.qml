@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Nejcoin Project
 // 
 // All rights reserved.
 // 
@@ -33,8 +33,8 @@ import QtQuick.XmlListModel 2.0
 import QtQuick.Controls 2.0
 
 import "../js/Wizard.js" as Wizard
-import "../components" as MoneroComponents
-import "../components/effects/" as MoneroEffects
+import "../components" as NejcoinComponents
+import "../components/effects/" as NejcoinEffects
 
 Rectangle {
     id: langScreen
@@ -50,15 +50,15 @@ Rectangle {
         }
     }
 
-    MoneroEffects.GradientBackground {
+    NejcoinEffects.GradientBackground {
         anchors.fill: parent
-        fallBackColor: MoneroComponents.Style.middlePanelBackgroundColor
-        initialStartColor: MoneroComponents.Style.wizardBackgroundGradientStart
-        initialStopColor: MoneroComponents.Style.middlePanelBackgroundGradientStop
-        blackColorStart: MoneroComponents.Style._b_wizardBackgroundGradientStart
-        blackColorStop: MoneroComponents.Style._b_middlePanelBackgroundGradientStop
-        whiteColorStart: MoneroComponents.Style._w_wizardBackgroundGradientStart
-        whiteColorStop: MoneroComponents.Style._w_middlePanelBackgroundGradientStop
+        fallBackColor: NejcoinComponents.Style.middlePanelBackgroundColor
+        initialStartColor: NejcoinComponents.Style.wizardBackgroundGradientStart
+        initialStopColor: NejcoinComponents.Style.middlePanelBackgroundGradientStop
+        blackColorStart: NejcoinComponents.Style._b_wizardBackgroundGradientStart
+        blackColorStop: NejcoinComponents.Style._b_middlePanelBackgroundGradientStop
+        whiteColorStart: NejcoinComponents.Style._w_wizardBackgroundGradientStart
+        whiteColorStop: NejcoinComponents.Style._w_middlePanelBackgroundGradientStop
         start: Qt.point(0, 0)
         end: Qt.point(height, width)
     }
@@ -72,8 +72,8 @@ Rectangle {
         TextArea {
             text: qsTr("Language settings") + translationManager.emptyString
             Layout.fillWidth: true
-            font.family: MoneroComponents.Style.fontRegular.name
-            color: MoneroComponents.Style.defaultFontColor
+            font.family: NejcoinComponents.Style.fontRegular.name
+            color: NejcoinComponents.Style.defaultFontColor
             font.pixelSize: {
                 if(langScreen.layoutScale === 2 ){
                     return 34;
@@ -82,8 +82,8 @@ Rectangle {
                 }
             }
 
-            selectionColor: MoneroComponents.Style.textSelectionColor
-            selectedTextColor: MoneroComponents.Style.textSelectedColor
+            selectionColor: NejcoinComponents.Style.textSelectionColor
+            selectedTextColor: NejcoinComponents.Style.textSelectedColor
 
             selectByMouse: true
             wrapMode: Text.WordWrap
@@ -98,10 +98,10 @@ Rectangle {
             Layout.fillWidth: true
             visible: parent.subtitle !== ""
 
-            color: MoneroComponents.Style.dimmedFontColor
-            text: qsTr("Change the language of the Monero GUI.") + translationManager.emptyString
+            color: NejcoinComponents.Style.dimmedFontColor
+            text: qsTr("Change the language of the Nejcoin GUI.") + translationManager.emptyString
 
-            font.family: MoneroComponents.Style.fontRegular.name
+            font.family: NejcoinComponents.Style.fontRegular.name
             font.pixelSize: {
                 if(langScreen.layoutScale === 2 ){
                     return 16;
@@ -110,8 +110,8 @@ Rectangle {
                 }
             }
 
-            selectionColor: MoneroComponents.Style.textSelectionColor
-            selectedTextColor: MoneroComponents.Style.textSelectedColor
+            selectionColor: NejcoinComponents.Style.textSelectionColor
+            selectedTextColor: NejcoinComponents.Style.textSelectedColor
 
             selectByMouse: true
             wrapMode: Text.WordWrap
@@ -168,11 +168,11 @@ Rectangle {
                         height: parent.height
                         width: langText.width + 22
 
-                        MoneroComponents.TextPlain {
+                        NejcoinComponents.TextPlain {
                             id: langText
                             font.bold: true
                             font.pixelSize: 14
-                            color: MoneroComponents.Style.defaultFontColor
+                            color: NejcoinComponents.Style.defaultFontColor
                             text: display_name
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
@@ -214,7 +214,7 @@ Rectangle {
             Layout.topMargin: 32
             spacing: 20
 
-            MoneroComponents.StandardButton {
+            NejcoinComponents.StandardButton {
                 small: true
                 text: qsTr("Close") + translationManager.emptyString
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Nejcoin Project
 //
 // All rights reserved.
 //
@@ -29,14 +29,14 @@
 #include "SubaddressAccount.h"
 #include <QDebug>
 
-SubaddressAccount::SubaddressAccount(Monero::SubaddressAccount *subaddressAccountImpl, QObject *parent)
+SubaddressAccount::SubaddressAccount(Nejcoin::SubaddressAccount *subaddressAccountImpl, QObject *parent)
   : QObject(parent), m_subaddressAccountImpl(subaddressAccountImpl)
 {
     qDebug(__FUNCTION__);
     getAll();
 }
 
-QList<Monero::SubaddressAccountRow*> SubaddressAccount::getAll(bool update) const
+QList<Nejcoin::SubaddressAccountRow*> SubaddressAccount::getAll(bool update) const
 {
     qDebug(__FUNCTION__);
 
@@ -55,7 +55,7 @@ QList<Monero::SubaddressAccountRow*> SubaddressAccount::getAll(bool update) cons
     return m_rows;
 }
 
-Monero::SubaddressAccountRow * SubaddressAccount::getRow(int index) const
+Nejcoin::SubaddressAccountRow * SubaddressAccount::getRow(int index) const
 {
     return m_rows.at(index);
 }

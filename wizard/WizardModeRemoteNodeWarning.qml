@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Nejcoin Project
 // 
 // All rights reserved.
 // 
@@ -31,7 +31,7 @@ import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.0
 
 import "../js/Wizard.js" as Wizard
-import "../components" as MoneroComponents
+import "../components" as NejcoinComponents
 
 Rectangle {
     id: wizardModeRemoteNodeWarning
@@ -66,47 +66,47 @@ Rectangle {
                 Layout.topMargin: 10
                 Layout.fillWidth: true
 
-                MoneroComponents.TextPlain {
-                    text: qsTr("This mode is ideal for managing small amounts of Monero. You have access to basic features for making and managing transactions. It will automatically connect to the Monero network so you can start using Monero immediately.") + translationManager.emptyString
-                    themeTransitionBlackColor: MoneroComponents.Style._b_lightGreyFontColor
-                    themeTransitionWhiteColor: MoneroComponents.Style._w_lightGreyFontColor
+                NejcoinComponents.TextPlain {
+                    text: qsTr("This mode is ideal for managing small amounts of Nejcoin. You have access to basic features for making and managing transactions. It will automatically connect to the Nejcoin network so you can start using Nejcoin immediately.") + translationManager.emptyString
+                    themeTransitionBlackColor: NejcoinComponents.Style._b_lightGreyFontColor
+                    themeTransitionWhiteColor: NejcoinComponents.Style._w_lightGreyFontColor
                     wrapMode: Text.Wrap
                     Layout.topMargin: 14
                     Layout.fillWidth: true
 
-                    font.family: MoneroComponents.Style.fontRegular.name
+                    font.family: NejcoinComponents.Style.fontRegular.name
                     font.pixelSize: 16
-                    color: MoneroComponents.Style.lightGreyFontColor
+                    color: NejcoinComponents.Style.lightGreyFontColor
                 }
 
-                MoneroComponents.TextPlain {
+                NejcoinComponents.TextPlain {
                     text: qsTr("Remote nodes are useful if you are not able/don't want to download the whole blockchain, but be advised that malicious remote nodes could compromise some privacy. They could track your IP address, track your \"restore height\" and associated block request data, and send you inaccurate information to learn more about transactions you make.") + translationManager.emptyString
-                    themeTransitionBlackColor: MoneroComponents.Style._b_lightGreyFontColor
-                    themeTransitionWhiteColor: MoneroComponents.Style._w_lightGreyFontColor
+                    themeTransitionBlackColor: NejcoinComponents.Style._b_lightGreyFontColor
+                    themeTransitionWhiteColor: NejcoinComponents.Style._w_lightGreyFontColor
                     wrapMode: Text.Wrap
                     Layout.topMargin: 8
                     Layout.fillWidth: true
 
-                    font.family: MoneroComponents.Style.fontRegular.name
+                    font.family: NejcoinComponents.Style.fontRegular.name
                     font.pixelSize: 16
-                    color: MoneroComponents.Style.lightGreyFontColor
+                    color: NejcoinComponents.Style.lightGreyFontColor
                 }
 
-                MoneroComponents.WarningBox {
+                NejcoinComponents.WarningBox {
                     Layout.topMargin: 14
                     Layout.bottomMargin: 6
                     text: qsTr("Remain aware of these limitations. <b>Users who prioritize privacy and decentralization must use a full node instead</b>.") + translationManager.emptyString
                 }
 
-                MoneroComponents.TextPlain {
+                NejcoinComponents.TextPlain {
                     text: qsTr("For enhanced node performance you may specify your region:") + translationManager.emptyString
                     wrapMode: Text.Wrap
                     Layout.topMargin: 8
                     Layout.fillWidth: true
 
-                    font.family: MoneroComponents.Style.fontRegular.name
+                    font.family: NejcoinComponents.Style.fontRegular.name
                     font.pixelSize: 16
-                    color: MoneroComponents.Style.defaultFontColor
+                    color: NejcoinComponents.Style.defaultFontColor
                 }
 
                 GridLayout {
@@ -117,7 +117,7 @@ Rectangle {
                         Layout.fillWidth: true
                         spacing: 0
 
-                        MoneroComponents.StandardDropdown {
+                        NejcoinComponents.StandardDropdown {
                             id: regionDropdown
                             Layout.fillWidth: true
                             dataModel: regionModel
@@ -141,7 +141,7 @@ Rectangle {
                     z: parent.z + 1
                 }
 
-                MoneroComponents.CheckBox {
+                NejcoinComponents.CheckBox {
                     id: understoodCheckbox
                     Layout.topMargin: 20
                     fontSize: 16
