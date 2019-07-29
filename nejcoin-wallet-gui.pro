@@ -233,12 +233,12 @@ win32 {
     # WIN64 Host settings
     contains(MSYS_HOST_ARCH, x86_64) {
         message("Host is 64bit")
-        MSYS_ROOT_PATH=c:/msys64
+        MSYS_ROOT_PATH=$$msys64
 
     # WIN32 Host settings
     } else {
         message("Host is 32bit")
-        MSYS_ROOT_PATH=c:/msys32
+        MSYS_ROOT_PATH=$$msys32
     }
 
     # WIN64 Target settings

@@ -111,7 +111,12 @@ if ! QMAKE=$(find_command qmake qmake-qt5); then
     echo "Failed to find suitable qmake command."
     exit 1
 fi
-$QMAKE ../nejcoin-wallet-gui.pro "$CONFIG" || exit
+
+source $ROOT_DIR/values.sh
+msys64=$(get_msys64_loc)
+msys32=$(get_msys32_loc)
+
+$QMAKE ../nejcoin-wallet-gui.pro "$CONFIG" "msys32=$msys32" "msys64=$msys64"|| exit
 $MAKE || exit 
 
 # Copy nejcoind to bin folder
