@@ -1,5 +1,6 @@
 ; Nejcoin Boron Butterfly GUI Wallet Installer for Windows
-; Copyright (c) 2017-2019, The Nejcoin Project
+; Copyright (c) 2019-2019, Nejcraft
+; Copyright (c) 2017-2019, The Monero Project
 ; See LICENSE
 
 [Setup]
