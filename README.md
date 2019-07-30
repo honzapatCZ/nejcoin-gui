@@ -37,9 +37,7 @@ As with many development projects, the repository on Github is considered to be 
 
 Nejcoin is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Nejcoin and Bitcoin donations can be made to **donate.getnejcoin.org** if using a client that supports the [OpenAlias](https://openalias.org) standard.
 
-The Nejcoin donation address is: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`)
-
-The Bitcoin donation address is: `1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H`
+The Nejcoin donation address is: `NLVbnG3MFTK7kiv1ZrsZs6gmF2eczrUne82xwogUHFJQZjBtLjYLhEHS6Qb58vGyp5cbBixtMRcnFY7QjnPDTsWP2nfp66G`
 
 GUI development funding and/or some supporting services are also graciously provided by sponsors:
 
