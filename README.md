@@ -35,21 +35,9 @@ As with many development projects, the repository on Github is considered to be 
 
 ## Supporting the project
 
-Nejcoin is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Nejcoin and Bitcoin donations can be made to **donate.getnejcoin.org** if using a client that supports the [OpenAlias](https://openalias.org) standard.
+Nejcoin is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Nejcoin donations can be made to **donate.getnejcoin.org** if using a client that supports the [OpenAlias](https://openalias.org) standard.
 
 The Nejcoin donation address is: `NLVbnG3MFTK7kiv1ZrsZs6gmF2eczrUne82xwogUHFJQZjBtLjYLhEHS6Qb58vGyp5cbBixtMRcnFY7QjnPDTsWP2nfp66G`
-
-GUI development funding and/or some supporting services are also graciously provided by sponsors:
-
-[<img width="80" src="https://static.getnejcoin.org/images/sponsors/mynejcoin.png"/>](https://mynejcoin.com)
-[<img width="150" src="https://static.getnejcoin.org/images/sponsors/kitware.png?1"/>](http://kitware.com)
-[<img width="100" src="https://static.getnejcoin.org/images/sponsors/dome9.png"/>](http://dome9.com)
-[<img width="150" src="https://static.getnejcoin.org/images/sponsors/araxis.png"/>](http://araxis.com)
-[<img width="150" src="https://static.getnejcoin.org/images/sponsors/jetbrains.png"/>](http://www.jetbrains.com/)
-[<img width="150" src="https://static.getnejcoin.org/images/sponsors/navicat.png"/>](http://www.navicat.com/)
-[<img width="150" src="https://static.getnejcoin.org/images/sponsors/symas.png"/>](http://www.symas.com/)
-
-There are also several mining pools that kindly donate a portion of their fees, [a list of them can be found on our Bitcointalk post](https://bitcointalk.org/index.php?topic=583449.0).
 
 ## License
 
